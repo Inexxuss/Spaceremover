@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Remover</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Space Remover</h1>
+        <div class="form-container">
+            <label for="text_input">Enter text with unnecessary spaces:</label><br>
+            <textarea id="text_input" name="text_input" rows="5" cols="50"></textarea><br>
+            <button onclick="cleanText()">Clean Text</button>
+        </div>
+        <div id="cleaned_text_container"></div>
+        <button id="copy_button" onclick="copyText()" style="display:none;">Copy Cleaned Text</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
