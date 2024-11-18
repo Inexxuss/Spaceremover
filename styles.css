@@ -1,43 +1,56 @@
+/* Apply box-sizing globally */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #3edb43;
-
+    background-color: #1F4529; /* Dark green background */
+    color: #ffffff; /* Default text color for dark mode */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
 }
 
 .container {
-    width: 30%;
+    width: 40%;
     margin: 50px auto;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     margin-bottom: 20px;
 }
 
-.form-container {
-    margin-bottom: 20px;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
 button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #E8ECD7; /* Updated button background color */
+    color: #000; /* Change text color to black for contrast */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 5px; /* Added margin for better spacing */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #b7bda5; /* Optional: Change hover color to a darker shade */
+}
+
+textarea {
+    width: 100%; /* Make textarea take full width of the container */
+    height: 150px; /* Set a default height */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    resize: vertical; /* Allow vertical resizing only */
+    margin-top: 10px; /* Add some space above */
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    color: #000; /* Text color */
 }
 
 #cleaned_text_container {
@@ -47,11 +60,75 @@ button:hover {
 
 #cleaned_text_container p {
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background for cleaned text */
     border-radius: 5px;
 }
-#copy_button {
+
+#copy_button, #download_button {
     margin-top: 20px;
     display: block;
     margin: 0 auto;
+}
+
+#analysis_container {
+    margin-top: 20px;
+    text-align: left; /* Align text to the left for better readability */
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212; /* Dark background for dark mode */
+    color: #ffffff; /* Light text color for dark mode */
+}
+
+.dark-mode .container {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for container in dark mode */
+}
+
+.dark-mode #cleaned_text_container p {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background for cleaned text in dark mode */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 70%; /* Increase width on smaller screens */
+        margin: 20px auto; /* Reduce margin for smaller screens */
+    }
+
+    button {
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    textarea {
+        height: 120px; /* Adjust height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Full width on very small screens */
+        padding: 15px; /* Reduce padding */
+    }
+
+    textarea {
+        height: 100px; /* Adjust height for smartphones */
+    }
+
+    h1 {
+        font-size: 1.2em; /* Further adjust heading size */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width */
+        padding: 12px; /* Adjust button padding */
+    }
+
+    #cleaned_text_container p {
+        font-size: 0.9em; /* Adjust font size for readability */
+    }
 }
